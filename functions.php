@@ -43,7 +43,7 @@ function parent_xilidev_setup () {
 			require_once ( $xili_language_includes_folder . '/theme-multilingual-classes.php' ); // ref xili-options based in plugin
 		}
 
-		if ( file_exists( $xili_functionsfolder . '/multilingual-functions.php') ) { error_log('fonct');
+		if ( file_exists( $xili_functionsfolder . '/multilingual-functions.php') ) {
 			require_once ( $xili_functionsfolder . '/multilingual-functions.php' );
 		}
 
@@ -193,6 +193,19 @@ function responsive_post_meta_data() {
 	}
 }
 
+/**
+ * condition to filter adjacent links
+ * @since 1.1.4
+ *
+ */
+
+function is_xili_adjacent_filterable() {
+
+	if ( is_search () ) { // for multilingual search
+		return false;
+	}
+	return true;
+}
 
 
 /**
