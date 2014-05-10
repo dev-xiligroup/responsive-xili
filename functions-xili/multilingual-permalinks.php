@@ -2,10 +2,10 @@
 /**
  * File reserved
  * for donators - http://dev.xiligroup.com/?page_id=2419
- * for contributors : free published themes,  free published plugins,  translators, authors of docs about xili-language trilogy, testers.
+ * for contributors : free published themes, free published plugins, translators, authors of docs about xili-language trilogy, testers.
  *
  * must be in themes/... theme name .../functions-xili/ sub-folder
- * examples of embedded themes like  twentythirteen-xili (http://2013.extend.xiligroup.org/)
+ * examples of bundled embedded themes like twentythirteen-xili (http://2013.extend.xiligroup.org/)
  *
  * After installation and language alias defining, permalinks must be refreshed
  *

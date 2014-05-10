@@ -3,29 +3,32 @@
  * responsive-xili
  * Version - see style.css
  * 2012-07-08 - first public release
- * 2014-02-12 - 1.9.4 - ready for  WP3.8 and XL 2.10+
+ * 2014-02-12 - 1.9.4 - ready for WP3.8 and XL 2.10+
+ * 2014-05-10 - 1.9.5 - ready for WP3.9+ and XL 2.12+
  *
  */
 define('RESPONSIVE_XILI_VER', '1.9.4'); // as mentioned in style.css
 
 /**
- *  responsive for xili functions -
+ * responsive for xili functions -
  *
  */
 function parent_xilidev_setup () {
 
 	$theme_domain = 'responsive';
 
+	$minimum_xl_version = '2.11.9';
+
 	if (is_admin())
 		load_textdomain( $theme_domain, get_stylesheet_directory() ."/langs/local-" . WPLANG . ".mo" ); // admin msgid terms are also in local of child !
 
-	load_theme_textdomain( $theme_domain, STYLESHEETPATH . '/langs' ); // now use .mo of child
+	load_theme_textdomain( $theme_domain, get_stylesheet_directory() . '/langs' ); // now use .mo of child
 
 	$xl_required_version = false;
 
 	if ( class_exists('xili_language') ) { // if temporary disabled
 
-		$xl_required_version = version_compare ( XILILANGUAGE_VER, '2.9.99', '>' );
+		$xl_required_version = version_compare ( XILILANGUAGE_VER, $minimum_xl_version, '>' );
 
 		global $xili_language;
 
@@ -40,25 +43,18 @@ function parent_xilidev_setup () {
 			require_once ( $xili_language_includes_folder . '/theme-multilingual-classes.php' ); // ref xili-options based in plugin
 		}
 
-		if ( file_exists( $xili_functionsfolder . '/multilingual-functions.php') ) {
+		if ( file_exists( $xili_functionsfolder . '/multilingual-functions.php') ) { error_log('fonct');
 			require_once ( $xili_functionsfolder . '/multilingual-functions.php' );
 		}
-
-		if ( file_exists( $xili_functionsfolder . '/multilingual-permalinks.php') && $xili_language->is_permalink ) {
-			require_once ( $xili_functionsfolder . '/multilingual-permalinks.php' ); // require subscribing premium services
-		}
-
-
-	//register_nav_menu ( 'toto', 'essai' );
 
 		global $xili_language_theme_options ; // used on both side
 	// Args dedicaced to this theme named TwentyTen
 		$xili_args = array (
-	 		'customize_clone_widget_containers' => false, // comment or set to true to clone widget containers
-	 		'settings_name' => 'xili_responsive_theme_options', // name of array saved in options table
-	 		'theme_name' => 'Responsive',
-	 		'theme_domain' => $theme_domain,
-	 		'child_version' => RESPONSIVE_XILI_VER
+			'customize_clone_widget_containers' => false, // comment or set to true to clone widget containers
+			'settings_name' => 'xili_responsive_theme_options', // name of array saved in options table
+			'theme_name' => 'Responsive',
+			'theme_domain' => $theme_domain,
+			'child_version' => RESPONSIVE_XILI_VER
 		);
 
 		if ( is_admin() ) {
@@ -66,11 +62,11 @@ function parent_xilidev_setup () {
 		// Admin args dedicaced to this theme
 
 			$xili_admin_args = array_merge ( $xili_args, array (
-		 		'customize_adds' => true, // add settings in customize page
-		 		'customize_addmenu' => false, // done by 2013
-		 		'capability' => 'edit_theme_options'
+				'customize_adds' => true, // add settings in customize page
+				'customize_addmenu' => false, // done by 2013
+				'capability' => 'edit_theme_options'
 			) );
-			if ( class_exists ( 'xili_language_theme_options_admin' )  ) {
+			if ( class_exists ( 'xili_language_theme_options_admin' ) ) {
 				$xili_language_theme_options = new xili_language_theme_options_admin ( $xili_admin_args );
 				$class_ok = true ;
 			} else {
@@ -80,7 +76,7 @@ function parent_xilidev_setup () {
 
 		} else { // visitors side - frontend
 
-			if ( class_exists ( 'xili_language_theme_options' )  ) {
+			if ( class_exists ( 'xili_language_theme_options' ) ) {
 				$xili_language_theme_options = new xili_language_theme_options ( $xili_args );
 				$class_ok = true ;
 			} else {
@@ -89,34 +85,40 @@ function parent_xilidev_setup () {
 		}
 	}
 
+	$xili_theme_options = get_theme_xili_options() ;
+		// to collect checked value in xili-options of theme
+	if ( file_exists( $xili_functionsfolder . '/multilingual-permalinks.php') && $xili_language->is_permalink && isset( $xili_theme_options['perma_ok'] ) && $xili_theme_options['perma_ok']) {
+		require_once ( $xili_functionsfolder . '/multilingual-permalinks.php' ); // require subscribing premium services
+	}
+
 	// errors and installation informations
 
 	if ( ! class_exists( 'xili_language' ) ) {
 
 		$msg = '
 		<div class="error">
-			<p>' . sprintf ( __('The %s child theme requires xili-language plugin installed and activated', $theme_domain ), get_option( 'current_theme' ) ).'</p>
+			<p>' . sprintf ( __('The %s child theme requires xili-language plugin installed and activated', 'responsive' ), get_option( 'current_theme' ) ).'</p>
 		</div>';
 
-	} elseif ( $class_ok === false )  {
+	} elseif ( $class_ok === false ) {
 
 		$msg = '
 		<div class="error">
-			<p>' . sprintf ( __('The %s child theme requires <em>xili_language_theme_options</em> class to set multilingual features.', $theme_domain ), get_option( 'current_theme' ) ).'</p>
+			<p>' . sprintf ( __('The %s child theme requires <em>xili_language_theme_options</em> class to set multilingual features.', 'responsive' ), get_option( 'current_theme' ) ).'</p>
 		</div>';
 
-	} elseif ( $xl_required_version )  {
+	} elseif ( $xl_required_version ) {
 
 		$msg = '
 		<div class="updated">
-			<p>' . sprintf ( __('The %s child theme was successfully activated with xili-language.', $theme_domain ), get_option( 'current_theme' ) ).'</p>
+			<p>' . sprintf ( __('The %s child theme was successfully activated with xili-language.', 'responsive' ), get_option( 'current_theme' ) ).'</p>
 		</div>';
 
 	} else {
 
 		$msg = '
 		<div class="error">
-			<p>' . sprintf ( __('The %s child theme requires xili-language version 2.8.8+', $theme_domain ), get_option( 'current_theme' ) ).'</p>
+			<p>' . sprintf ( __('The %1$s child theme requires xili-language version %2$s+', 'twentyeleven' ), get_option( 'current_theme' ), $minimum_xl_version ).'</p>
 		</div>';
 	}
 	// after activation and in themes list
@@ -139,7 +141,7 @@ define('XILI_CATS_ALL','0');
 function special_head() {
 
 	if ( is_search() ) {
-	 	add_filter('get_search_form', 'my_langs_in_search_form_responsive', 10, 1); // responsive bellow
+		add_filter('get_search_form', 'my_langs_in_search_form_responsive', 10, 1); // responsive bellow
 	}
 
 	$xili_theme_options = get_theme_xili_options() ;
@@ -155,9 +157,9 @@ function special_head() {
  */
 function xili_responsive_breadcrumb_lists () {
 
- 	add_filter ('get_category', 'xili_responsive_category',10 ,2);
- 	responsive_breadcrumb_lists();
- 	remove_filter ('get_category', 'xili_responsive_category');
+	add_filter ('get_category', 'xili_responsive_category',10 ,2);
+	responsive_breadcrumb_lists();
+	remove_filter ('get_category', 'xili_responsive_category');
 
 }
 function xili_responsive_category ($term, $taxonomy) {
@@ -181,8 +183,8 @@ function responsive_post_meta_data() {
 	sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
 		get_author_posts_url( get_the_author_meta( 'ID' ) ),
 		sprintf( esc_attr__( 'View all posts by %s', 'responsive' ), get_the_author() ),
-		get_the_author()
-	    )
+			get_the_author()
+		)
 	);
 
 	if ( xiliml_new_list() ) {
@@ -220,7 +222,7 @@ function xili_parent_flags_style () {
 			$language_xili_settings = get_option('xili_language_settings');
 		}
 
-		$language_slugs_list =  array_keys ( $language_xili_settings['langs_ids_array'] ) ;
+		$language_slugs_list = array_keys ( $language_xili_settings['langs_ids_array'] ) ;
 
 		?>
 		<!-- style for ©xili-language menu of responsive child -->
@@ -265,7 +267,7 @@ function xiliml_new_list() {
 
 		$xili_theme_options = get_theme_xili_options() ; // see below
 
-		if ( isset ( $xili_theme_options['linked_posts'] ) &&  $xili_theme_options['linked_posts'] == 'show_linked' ) {
+		if ( isset ( $xili_theme_options['linked_posts'] ) && $xili_theme_options['linked_posts'] == 'show_linked' ) {
 			if (is_page() && is_front_page() ) {
 				return false;
 			} else {

@@ -67,7 +67,7 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
 			<h2 class="featured-subtitle">
 				<?php
 				if ( isset( $responsive_options['home_subheadline'] ) && $db && $empty )
-					_e( $responsive_options['home_subheadline'],'responsive');
+					echo $responsive_options['home_subheadline'];
 				else {
 					_e( 'Your H2 subheadline here', 'responsive' );
 				}
@@ -80,8 +80,7 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
 			} else {
 				?>
 				<p>
-					<?php _e( 'Your title, subtitle and this very content is editable from Theme Option. Call to Action button and its destination link as well. Image on your right can be an image
-					or even YouTube video if you like.', 'responsive' ); ?>
+					<?php _e( 'Your title, subtitle and this very content is editable from Theme Option. Call to Action button and its destination link as well. Image on your right can be an image or even YouTube video if you like.', 'responsive' ); ?>
 				</p>
 
 			<?php
@@ -94,7 +93,7 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
 					<a href="<?php echo $responsive_options['cta_url']; ?>" class="blue button">
 						<?php
 						if ( isset( $responsive_options['cta_text'] ) && $db )
-							_e( $responsive_options['cta_text'],'responsive');
+							echo $responsive_options['cta_text'];
 						else
 							_e( 'Call to Action', 'responsive' );
 						?>
