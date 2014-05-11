@@ -4,7 +4,7 @@
  * Version - see style.css
  * 2012-07-08 - first public release
  * 2014-02-12 - 1.9.4 - ready for WP3.8 and XL 2.10+
- * 2014-05-10 - 1.9.5 - ready for WP3.9+ and XL 2.12+
+ * 2014-05-11 - 1.9.5 - ready for WP3.9+ and XL 2.12+
  *
  */
 define('RESPONSIVE_XILI_VER', '1.9.5'); // as mentioned in style.css
@@ -90,7 +90,16 @@ function parent_xilidev_setup () {
 			if ( file_exists( $xili_functionsfolder . '/multilingual-permalinks.php') && $xili_language->is_permalink && isset( $xili_theme_options['perma_ok'] ) && $xili_theme_options['perma_ok']) {
 				require_once ( $xili_functionsfolder . '/multilingual-permalinks.php' ); // require subscribing premium services
 			}
-			$msg = $xili_language_theme_options->child_installation_msg( $xl_required_version, $minimum_xl_version, $class_ok );
+			if ( $xl_required_version ) { // msg choice is inside class
+				$msg = $xili_language_theme_options->child_installation_msg( $xl_required_version, $minimum_xl_version, $class_ok );
+			} else {
+				$msg = '
+				<div class="error">'.
+					/* translators: added in child functions by xili */
+					'<p>' . sprintf ( __('The %1$s child theme requires xili_language version more recent than %2$s installed', 'responsive' ), get_option( 'current_theme', $minimum_xl_version ) ).'</p>
+				</div>';
+
+			}
 		} else {
 
 			$msg = '
