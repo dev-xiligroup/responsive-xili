@@ -48,7 +48,7 @@ function parent_xilidev_setup () {
 		}
 
 		global $xili_language_theme_options ; // used on both side
-	// Args dedicaced to this theme named TwentyTen
+	// Args dedicaced to this theme named Responsive
 		$xili_args = array (
 			'customize_clone_widget_containers' => false, // comment or set to true to clone widget containers
 			'settings_name' => 'xili_responsive_theme_options', // name of array saved in options table
@@ -83,48 +83,34 @@ function parent_xilidev_setup () {
 				$class_ok = false ;
 			}
 		}
-	}
 
-	$xili_theme_options = get_theme_xili_options() ;
-		// to collect checked value in xili-options of theme
-	if ( file_exists( $xili_functionsfolder . '/multilingual-permalinks.php') && $xili_language->is_permalink && isset( $xili_theme_options['perma_ok'] ) && $xili_theme_options['perma_ok']) {
-		require_once ( $xili_functionsfolder . '/multilingual-permalinks.php' ); // require subscribing premium services
-	}
+		if ( $class_ok ) {
+			$xili_theme_options = get_theme_xili_options() ;
+			// to collect checked value in xili-options of theme
+			if ( file_exists( $xili_functionsfolder . '/multilingual-permalinks.php') && $xili_language->is_permalink && isset( $xili_theme_options['perma_ok'] ) && $xili_theme_options['perma_ok']) {
+				require_once ( $xili_functionsfolder . '/multilingual-permalinks.php' ); // require subscribing premium services
+			}
+			$msg = $xili_language_theme_options->child_installation_msg( $xl_required_version, $minimum_xl_version, $class_ok );
+		} else {
 
-	// errors and installation informations
+			$msg = '
+			<div class="error">'.
+				/* translators: added in child functions by xili */
+				'<p>' . sprintf ( __('The %s child theme requires xili_language_theme_options class installed and activated', 'responsive' ), get_option( 'current_theme' ) ).'</p>
+			</div>';
 
-	if ( ! class_exists( 'xili_language' ) ) {
-
-		$msg = '
-		<div class="error">'.
-			/* translators: added in child functions by xili */
-			'<p>' . sprintf ( __('The %s child theme requires xili-language plugin installed and activated', 'twentytwelve' ), get_option( 'current_theme' ) ).'</p>
-		</div>';
-
-	} elseif ( $class_ok === false ) {
-
-		$msg = '
-		<div class="error">'.
-			/* translators: added in child functions by xili */
-			'<p>' . sprintf ( __('The %s child theme requires <em>xili_language_theme_options</em> class to set multilingual features.', 'twentytwelve' ), get_option( 'current_theme' ) ).'</p>
-		</div>';
-
-	} elseif ( $xl_required_version ) {
-
-		$msg = '
-		<div class="updated">'.
-			/* translators: added in child functions by xili */
-			'<p>' . sprintf ( __('The %s child theme was successfully activated with xili-language.', 'twentytwelve' ), get_option( 'current_theme' ) ).'</p>
-		</div>';
+		}
 
 	} else {
 
 		$msg = '
 		<div class="error">'.
 			/* translators: added in child functions by xili */
-			'<p>' . sprintf ( __('The %1$s child theme requires xili-language version %2$s+', 'twentytwelve' ), get_option( 'current_theme' ), $minimum_xl_version ).'</p>
+			'<p>' . sprintf ( __('The %s child theme requires xili-language plugin installed and activated', 'responsive' ), get_option( 'current_theme' ) ).'</p>
 		</div>';
+
 	}
+
 	// after activation and in themes list
 	if ( isset( $_GET['activated'] ) || ( ! isset( $_GET['activated'] ) && ( ! $xl_required_version || ! $class_ok ) ) )
 		add_action( 'admin_notices', $c = create_function( '', 'echo "' . addcslashes( $msg, '"' ) . '";' ) );
