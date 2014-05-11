@@ -7,7 +7,7 @@
  * 2014-05-10 - 1.9.5 - ready for WP3.9+ and XL 2.12+
  *
  */
-define('RESPONSIVE_XILI_VER', '1.9.4'); // as mentioned in style.css
+define('RESPONSIVE_XILI_VER', '1.9.5'); // as mentioned in style.css
 
 /**
  * responsive for xili functions -
@@ -96,29 +96,33 @@ function parent_xilidev_setup () {
 	if ( ! class_exists( 'xili_language' ) ) {
 
 		$msg = '
-		<div class="error">
-			<p>' . sprintf ( __('The %s child theme requires xili-language plugin installed and activated', 'responsive' ), get_option( 'current_theme' ) ).'</p>
+		<div class="error">'.
+			/* translators: added in child functions by xili */
+			'<p>' . sprintf ( __('The %s child theme requires xili-language plugin installed and activated', 'twentytwelve' ), get_option( 'current_theme' ) ).'</p>
 		</div>';
 
 	} elseif ( $class_ok === false ) {
 
 		$msg = '
-		<div class="error">
-			<p>' . sprintf ( __('The %s child theme requires <em>xili_language_theme_options</em> class to set multilingual features.', 'responsive' ), get_option( 'current_theme' ) ).'</p>
+		<div class="error">'.
+			/* translators: added in child functions by xili */
+			'<p>' . sprintf ( __('The %s child theme requires <em>xili_language_theme_options</em> class to set multilingual features.', 'twentytwelve' ), get_option( 'current_theme' ) ).'</p>
 		</div>';
 
 	} elseif ( $xl_required_version ) {
 
 		$msg = '
-		<div class="updated">
-			<p>' . sprintf ( __('The %s child theme was successfully activated with xili-language.', 'responsive' ), get_option( 'current_theme' ) ).'</p>
+		<div class="updated">'.
+			/* translators: added in child functions by xili */
+			'<p>' . sprintf ( __('The %s child theme was successfully activated with xili-language.', 'twentytwelve' ), get_option( 'current_theme' ) ).'</p>
 		</div>';
 
 	} else {
 
 		$msg = '
-		<div class="error">
-			<p>' . sprintf ( __('The %1$s child theme requires xili-language version %2$s+', 'twentyeleven' ), get_option( 'current_theme' ), $minimum_xl_version ).'</p>
+		<div class="error">'.
+			/* translators: added in child functions by xili */
+			'<p>' . sprintf ( __('The %1$s child theme requires xili-language version %2$s+', 'twentytwelve' ), get_option( 'current_theme' ), $minimum_xl_version ).'</p>
 		</div>';
 	}
 	// after activation and in themes list

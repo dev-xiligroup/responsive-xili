@@ -73,11 +73,15 @@ $responsive_options = responsive_get_options();
 
 		<div class="grid col-300 scroll-top"><a href="#scroll-top" title="<?php esc_attr_e( 'scroll to top', 'responsive' ); ?>"><?php _e( '&uarr;', 'responsive' ); ?></a></div>
 
-		<div class="grid col-300 fit powered"><?php _e('Multilingual Child of','responsive'); ?>&nbsp;
+		<div class="grid col-300 fit powered"><?php
+		/* translators: added in child functions by xili */
+		_e('Multilingual Child of','responsive'); ?>&nbsp;
 			<a href="<?php echo esc_url( 'http://cyberchimps.com/responsive-theme/' ); ?>" title="<?php esc_attr_e( 'Responsive Theme', 'responsive' ); ?>">
 				Responsive Theme</a>
 			<?php esc_attr_e( 'powered by', 'responsive' ); ?> <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>" title="<?php esc_attr_e( 'WordPress', 'responsive' ); ?>">
-				WordPress</a>&nbsp;<?php _e('and','responsive'); ?>&nbsp;<a href="http://dev.xiligroup.com/xili-language/">©xili-language</a>
+				WordPress</a>&nbsp;<?php
+				/* translators: added in child functions by xili */
+				_e('and','responsive'); ?>&nbsp;<a href="http://dev.xiligroup.com/xili-language/">©xili-language</a>
 		</div>
 		<!-- end .powered -->
 
