@@ -5,9 +5,10 @@
  * 2012-07-08 - first public release
  * 2014-02-12 - 1.9.4 - ready for WP3.8 and XL 2.10+
  * 2014-05-11 - 1.9.5 - ready for WP3.9+ and XL 2.12+
+ * 2014-07-24 - 1.9.6 - ready for WP3.9+ and XL 2.15+
  *
  */
-define('RESPONSIVE_XILI_VER', '1.9.5'); // as mentioned in style.css
+define('RESPONSIVE_XILI_VER', '1.9.6'); // as mentioned in style.css
 
 /**
  * responsive for xili functions -
@@ -17,7 +18,7 @@ function parent_xilidev_setup () {
 
 	$theme_domain = 'responsive';
 
-	$minimum_xl_version = '2.11.9';
+	$minimum_xl_version = '2.14.9';
 
 	if (is_admin())
 		load_textdomain( $theme_domain, get_stylesheet_directory() ."/langs/local-" . WPLANG . ".mo" ); // admin msgid terms are also in local of child !
@@ -125,6 +126,8 @@ function parent_xilidev_setup () {
 		add_action( 'admin_notices', $c = create_function( '', 'echo "' . addcslashes( $msg, '"' ) . '";' ) );
 
 	// end errors...
+	// new with xili-language 2.15+
+	add_theme_support ( 'custom_xili_flag' );
 }
 
 /* actions and filters*/
@@ -141,12 +144,6 @@ function special_head() {
 
 	if ( is_search() ) {
 		add_filter('get_search_form', 'my_langs_in_search_form_responsive', 10, 1); // responsive bellow
-	}
-
-	$xili_theme_options = get_theme_xili_options() ;
-
-	if ( !isset( $xili_theme_options['no_flags'] ) || $xili_theme_options['no_flags'] != '1' ) {
-		xili_parent_flags_style();
 	}
 }
 
@@ -219,46 +216,28 @@ function my_langs_in_search_form_responsive ( $the_form ) {
 }
 
 /**
- * dynamic style for flag depending current list
+ * preset the default values for this theme in xili flags options (Appareance submenu)
+ * @since 1.9.6
+ * here param not used because only responsive
  *
- * @since 1.0.2 - add #access
+ * called in function get_default_xili_flag_options of xili-language.php
  *
  */
-function xili_parent_flags_style () {
-	if ( class_exists('xili_language') ) {
-		global $xili_language ;
-		$language_xili_settings = get_option('xili_language_settings');
-		if ( !is_array( $language_xili_settings['langs_ids_array'] ) ) {
-			$xili_language->get_lang_slug_ids(); // update array when no lang_perma 110830 thanks to Pierre
-			update_option( 'xili_language_settings', $xili_language->xili_settings );
-			$language_xili_settings = get_option('xili_language_settings');
-		}
+add_filter ('get_default_xili_flag_options', 'responsive_xili_default_xili_flag_options', 10, 2);
 
-		$language_slugs_list = array_keys ( $language_xili_settings['langs_ids_array'] ) ;
-
-		?>
-		<!-- style for ©xili-language menu of responsive child -->
-		<style type="text/css">
-
-		<?php
-
-		$path = get_stylesheet_directory_uri();
-
-		$ulmenus = array();
-		foreach ( $language_slugs_list as $slug ) { // only top-menu (.top-menu (1.9.1)
-			echo "ul.top-menu li.lang-{$slug} {display:inline-block; background: transparent url('{$path}/images/flags/{$slug}.png') no-repeat center 04px; }\n";
-			echo "ul.top-menu li.lang-{$slug}:hover > a {background:#efefef url('{$path}/images/flags/{$slug}.png') no-repeat center 04px !important;}\n";
-			$ulmenus[] = "ul.top-menu li.lang-{$slug} a";
-		}
-			echo implode (', ', $ulmenus ) . " { display:inline-block; text-indent:-9000px !important; width:6px; border-left:none;}\n";
-			echo "ul.top-menu li.menu-separator {display:none;}"; // to hidden separator = visibility:hidden;
-			echo "ul.top-menu li.current-lang {display:none;}"; // to hidden separator
-		?>
-		</style>
-		<?php
-
-	}
+function responsive_xili_default_xili_flag_options ( $default, $current_parent_theme ) {
+	// all the lines must be adapted for the top menu
+	$default = array (
+		'menu_with_flag' => '0',
+		'css_ul_nav_menu' => 'ul.top-menu',
+		'css_li_hover' => 'background-color:#efefef;',
+		'css_li_a' => 'display:inline-block; text-indent:-9999px !important; width:6px; background:transparent no-repeat center 4px; margin:0; border:none;',
+		'css_li_a_hover' => 'background: no-repeat center 5px !important;',
+	);
+	return $default;
 }
+
+
 
 /**
  *

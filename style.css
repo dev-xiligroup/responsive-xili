@@ -1,9 +1,9 @@
 /*
 Theme Name: Responsive-xili
 Theme URI: http://child-theme.wpmu.xilione.com
-Description: CHILD THEME OF - need xili-language 2.10+ - Responsive WordPress Theme ( http://themeid.com/responsive-theme/ ) that features 9 page Templates such as Blog, Blog Summary and Template based layout designs: sidebar/content, sidebar/content half, content/sidebar and content/sidebar half. (See parent theme for other features). Add xili-options to activate flags style menu and clone of main menu for each language.
+Description: CHILD THEME OF - need xili-language 2.15+ - Responsive WordPress Theme v. 1.9.6.+ ( http://themeid.com/responsive-theme/ ) that features 9 page Templates such as Blog, Blog Summary and Template based layout designs: sidebar/content, sidebar/content half, content/sidebar and content/sidebar half. (See parent theme for other features). Add xili-options to activate flags style menu and clone of main menu for each language.
 
-Version: 1.9.5-xili-a
+Version: 1.9.6-xili-a
 Author: michelwppi
 Author URI: http://dev.xiligroup.com
 Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready, child theme, tabs, multilingual, nav menu per language, rare language, rtl, farsi Copyright (C) 2003-2012 Emil Uzelac - ThemeID
@@ -12,6 +12,7 @@ License URI: license.txt
 Template: responsive
 */
 /**
+ * 2014-05-10 - 1.9.6 - need Responsive 1.9.6.x - ready for xl 2.15 with new way to incorporate flags via media library
  * 2014-05-10 - 1.9.5 - ready for new theme class incorporated - customize - xili-language 2.12+
  * 2014-02-12 - 1.9.4 - ready for new permalink class incorporated - customize - xili-language 2.10+
  * 2013-05-05 - 1.9.3 - new class incorporated - customize - xili-language 2.8.8+
