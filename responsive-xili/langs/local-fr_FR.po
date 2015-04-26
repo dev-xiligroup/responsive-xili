@@ -1,0 +1,421 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: theme = responsive-xili\n"
+"Report-Msgid-Bugs-To: contact@xiligroup.com\n"
+"POT-Creation-Date: 2015-04-26T18:07:01+00:00\n"
+"PO-Revision-Date: 2015-04-26T18:07:01+00:00\n"
+"Last-Translator: adminxili <team@xiligroup.org>\n"
+"Language-Team: xili-dictionary WP plugin and  <team@xiligroup.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1\n"
+"X-Poedit-Language: fr_FR\n"
+"X-Poedit-Country: fr_FR\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#. [local] (imported from mo) [local]
+#, php-format
+msgid "Responsive and multilingual"
+msgstr "Responsive multilingue"
+
+#. [local] (imported from mo) [local]
+#, php-format
+msgid "<img class=\"aligncenter\" src=\"http://childxili.wpmu.xilione.com/files/2012/07/fond-big.jpg\" />"
+msgstr "<img class=\"aligncenter\" src=\"http://childxili.wpmu.xilione.com/files/2012/07/fond.jpg\" />"
+
+#. [local] (imported from mo) [local]
+#, php-format
+msgid "Recent posts"
+msgstr "Articles récents"
+
+#. [local] (imported from mo) [local]
+#, php-format
+msgid "Multilingual website with xili-language and child theme"
+msgstr "Un site multilingue avec l'extension xili-language et un thème enfant."
+
+#. [local] (imported from mo) [local]
+#, php-format
+msgid "What is the content of this child theme named responsive-xili ?"
+msgstr "Que contient ce thème enfant dénommé responsive-xili pour devenir complètement multilingue ?"
+
+#. [local] (imported from mo) [local]
+#, php-format
+msgid "More info"
+msgstr "Plus d'infos"
+
+#. [local] (imported from mo) [local] name from category with slug
+#. uncategorized
+#, php-format
+msgid "Uncategorized"
+msgstr "Non classé"
+
+#. [local] (imported from mo) [local] name from category with slug news
+#, php-format
+msgid "News"
+msgstr "Actualités"
+
+#. [local] (imported from mo) [local] desc from category with slug news
+#, php-format
+msgid "Recent infos about this example site."
+msgstr "Actualités récentes sur ce site exemple."
+
+#. [local] (imported from mo) [local] bloginfo - blogname
+#, php-format
+msgid "Child theme examples"
+msgstr "Exemples de thèmes enfants"
+
+#. [local] (imported from mo) [local] bloginfo - description
+#, php-format
+msgid "xili-language: multilingual website with child of responsive theme"
+msgstr "xili-language: Site web multilingue avec le thème enfant de responsive"
+
+#. [local] (imported from mo) [local] bloginfo - time_format
+#, php-format
+msgid "g:i a"
+msgstr "H:i"
+
+#. [local] (imported from mo) [local] bloginfo - date_format
+#, php-format
+msgid "F j, Y"
+msgstr "j F Y"
+
+#. [local] (imported from mo) [local] comment_form_labels name
+#, php-format
+msgid "Name"
+msgstr "Nom"
+
+#. [local] (imported from mo) [local] comment_form_labels email
+#, php-format
+msgid "Email"
+msgstr "Courriel"
+
+#. [local] (imported from mo) [local] comment_form_labels website
+#, php-format
+msgid "Website"
+msgstr "Site Web"
+
+#. [local] (imported from mo) [local] comment_form_labels comment
+#, php-format
+msgid "Comment"
+msgstr "Commentaire"
+
+#. [local] (imported from mo) [local] comment_form_labels youmustbe
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Vous devez être <a href=\"%s\">connecté</a> pour publier un commentaire."
+
+#. [local] (imported from mo) [local] comment_form_labels loggedinas
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out?</a>"
+msgstr "Connecté comme <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"se déconnecter\">Déconnexion ?</a>"
+
+#. [local] (imported from mo) [local] comment_form_labels emailnotpublished
+#, php-format
+msgid "Your email address will not be published."
+msgstr "L'adresse courriel n'est pas publié."
+
+#. [local] (imported from mo) [local] comment_form_labels requiredmarked
+#, php-format
+msgid " Required fields are marked <span class=\"required\">*</span>"
+msgstr "Les champs obligatoires sont marqués <span class=\"required\">*</span>"
+
+#. [local] (imported from mo) [local] comment_form_labels youmayuse
+#, php-format
+msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes:"
+msgstr "Ces balises <abbr title=\"HyperText Markup Language\">HTML</abbr> sont utilisables :"
+
+#. [local] (imported from mo) [local] comment_form_labels leavereply
+#, php-format
+msgid "Leave a Reply"
+msgstr "Laisser votre commentaire"
+
+#. [local] (imported from mo) [local] comment_form_labels replyto
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Commenter à %s"
+
+#. [local] (imported from mo) [local] comment_form_labels cancelreply
+#, php-format
+msgid "Cancel reply"
+msgstr "Annuler"
+
+#. [local] (imported from mo) [local] comment_form_labels postcomment
+#, php-format
+msgid "Post Comment"
+msgstr "Commentaire"
+
+#. [local] (imported from mo) [local] language with ISO en_US
+#, php-format
+msgid "english"
+msgstr "anglais"
+
+#. [local] (imported from mo) [local] language with ISO fr_FR
+#, php-format
+msgid "French"
+msgstr "français"
+
+#. [local] (imported from mo) [local] wp_locale Sunday
+#, php-format
+msgid "Sunday"
+msgstr "Dimanche"
+
+#. [local] (imported from mo) [local] wp_locale Monday
+#, php-format
+msgid "Monday"
+msgstr "Lundi"
+
+#. [local] (imported from mo) [local] wp_locale Tuesday
+#, php-format
+msgid "Tuesday"
+msgstr "Mardi"
+
+#. [local] (imported from mo) [local] wp_locale Wednesday
+#, php-format
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#. [local] (imported from mo) [local] wp_locale Thursday
+#, php-format
+msgid "Thursday"
+msgstr "Jeudi"
+
+#. [local] (imported from mo) [local] wp_locale Friday
+#, php-format
+msgid "Friday"
+msgstr "Vendredi"
+
+#. [local] (imported from mo) [local] wp_locale Saturday
+#, php-format
+msgid "Saturday"
+msgstr "Samedi"
+
+#. [local] (imported from mo) [local] wp_locale S_Sunday_initial
+#, php-format
+msgid "S_Sunday_initial"
+msgstr "D"
+
+#. [local] (imported from mo) [local] wp_locale M_Monday_initial
+#, php-format
+msgid "M_Monday_initial"
+msgstr "L"
+
+#. [local] (imported from mo) [local] wp_locale T_Tuesday_initial
+#, php-format
+msgid "T_Tuesday_initial"
+msgstr "Ma"
+
+#. [local] (imported from mo) [local] wp_locale W_Wednesday_initial
+#, php-format
+msgid "W_Wednesday_initial"
+msgstr "Me"
+
+#. [local] (imported from mo) [local] wp_locale T_Thursday_initial
+#, php-format
+msgid "T_Thursday_initial"
+msgstr "J"
+
+#. [local] (imported from mo) [local] wp_locale F_Friday_initial
+#, php-format
+msgid "F_Friday_initial"
+msgstr "V"
+
+#. [local] (imported from mo) [local] wp_locale S_Saturday_initial
+#, php-format
+msgid "S_Saturday_initial"
+msgstr "S"
+
+#. [local] (imported from mo) [local] wp_locale Sun
+#, php-format
+msgid "Sun"
+msgstr "dim"
+
+#. [local] (imported from mo) [local] wp_locale Mon
+#, php-format
+msgid "Mon"
+msgstr "lun"
+
+#. [local] (imported from mo) [local] wp_locale Tue
+#, php-format
+msgid "Tue"
+msgstr "mar"
+
+#. [local] (imported from mo) [local] wp_locale Wed
+#, php-format
+msgid "Wed"
+msgstr "mer"
+
+#. [local] (imported from mo) [local] wp_locale Thu
+#, php-format
+msgid "Thu"
+msgstr "jeu"
+
+#. [local] (imported from mo) [local] wp_locale Fri
+#, php-format
+msgid "Fri"
+msgstr "ven"
+
+#. [local] (imported from mo) [local] wp_locale Sat
+#, php-format
+msgid "Sat"
+msgstr "sam"
+
+#. [local] (imported from mo) [local] wp_locale January
+#, php-format
+msgid "January"
+msgstr "janvier"
+
+#. [local] (imported from mo) [local] wp_locale February
+#, php-format
+msgid "February"
+msgstr "février"
+
+#. [local] (imported from mo) [local] wp_locale March
+#, php-format
+msgid "March"
+msgstr "mars"
+
+#. [local] (imported from mo) [local] wp_locale April
+#, php-format
+msgid "April"
+msgstr "avril"
+
+#. [local] (imported from mo) [local] wp_locale May
+#, php-format
+msgid "May"
+msgstr "mai"
+
+#. [local] (imported from mo) [local] wp_locale June
+#, php-format
+msgid "June"
+msgstr "juin"
+
+#. [local] (imported from mo) [local] wp_locale July
+#, php-format
+msgid "July"
+msgstr "juillet"
+
+#. [local] (imported from mo) [local] wp_locale August
+#, php-format
+msgid "August"
+msgstr "août"
+
+#. [local] (imported from mo) [local] wp_locale September
+#, php-format
+msgid "September"
+msgstr "septembre"
+
+#. [local] (imported from mo) [local] wp_locale October
+#, php-format
+msgid "October"
+msgstr "octobre"
+
+#. [local] (imported from mo) [local] wp_locale November
+#, php-format
+msgid "November"
+msgstr "novembre"
+
+#. [local] (imported from mo) [local] wp_locale December
+#, php-format
+msgid "December"
+msgstr "décembre"
+
+#. [local] (imported from mo) [local] wp_locale Jan_January_abbreviation
+#, php-format
+msgid "Jan_January_abbreviation"
+msgstr "jan"
+
+#. [local] (imported from mo) [local] wp_locale Feb_February_abbreviation
+#, php-format
+msgid "Feb_February_abbreviation"
+msgstr "fév"
+
+#. [local] (imported from mo) [local] wp_locale Mar_March_abbreviation
+#, php-format
+msgid "Mar_March_abbreviation"
+msgstr "mar"
+
+#. [local] (imported from mo) [local] wp_locale Apr_April_abbreviation
+#, php-format
+msgid "Apr_April_abbreviation"
+msgstr "avr"
+
+#. [local] (imported from mo) [local] wp_locale May_May_abbreviation
+#, php-format
+msgid "May_May_abbreviation"
+msgstr "mai"
+
+#. [local] (imported from mo) [local] wp_locale Jun_June_abbreviation
+#, php-format
+msgid "Jun_June_abbreviation"
+msgstr "juin"
+
+#. [local] (imported from mo) [local] wp_locale Jul_July_abbreviation
+#, php-format
+msgid "Jul_July_abbreviation"
+msgstr "juil"
+
+#. [local] (imported from mo) [local] wp_locale Aug_August_abbreviation
+#, php-format
+msgid "Aug_August_abbreviation"
+msgstr "août"
+
+#. [local] (imported from mo) [local] wp_locale Sep_September_abbreviation
+#, php-format
+msgid "Sep_September_abbreviation"
+msgstr "sept"
+
+#. [local] (imported from mo) [local] wp_locale Oct_October_abbreviation
+#, php-format
+msgid "Oct_October_abbreviation"
+msgstr "oct"
+
+#. [local] (imported from mo) [local] wp_locale Nov_November_abbreviation
+#, php-format
+msgid "Nov_November_abbreviation"
+msgstr "nov"
+
+#. [local] (imported from mo) [local] wp_locale Dec_December_abbreviation
+#, php-format
+msgid "Dec_December_abbreviation"
+msgstr "déc"
+
+#. [local] (imported from mo) [local] wp_locale am
+#, php-format
+msgid "am"
+msgstr " "
+
+#. [local] (imported from mo) [local] wp_locale pm
+#, php-format
+msgid "pm"
+msgstr " "
+
+#. [local] (imported from mo) [local] wp_locale number_format_thousands_sep
+#, php-format
+msgid "number_format_thousands_sep"
+msgstr " "
+
+#. [local] (imported from mo) [local] wp_locale number_format_decimal_point
+#, php-format
+msgid "number_format_decimal_point"
+msgstr ", "
+
+#. [local] (imported from mo) [local]
+#, php-format
+msgid "This post in"
+msgstr "Traduit en"
+
+#. [local] (imported from mo) [local]
+#, php-format
+msgid "Search"
+msgstr "Chercher"
+
+#. [local] 
+#, php-format
+msgid "Welcome"
+msgstr "Bienvenue"
+
+#. [local] 
+#, php-format
+msgid "multilingual child example"
+msgstr "exemple enfant multilingue"

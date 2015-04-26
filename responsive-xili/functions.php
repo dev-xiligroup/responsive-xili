@@ -6,9 +6,10 @@
  * 2014-02-12 - 1.9.4 - ready for WP3.8 and XL 2.10+
  * 2014-05-11 - 1.9.5 - ready for WP3.9+ and XL 2.12+
  * 2014-07-24 - 1.9.6 - ready for WP3.9+ and XL 2.15+
+ * 2015-04-27 - 1.9.7 - ready for WP4.1+ and XL 2.17+
  *
  */
-define('RESPONSIVE_XILI_VER', '1.9.6'); // as mentioned in style.css
+define('RESPONSIVE_XILI_VER', '1.9.7'); // as mentioned in style.css
 
 /**
  * responsive for xili functions -
@@ -18,10 +19,10 @@ function parent_xilidev_setup () {
 
 	$theme_domain = 'responsive';
 
-	$minimum_xl_version = '2.14.9';
+	$minimum_xl_version = '2.16.4';
 
 	if (is_admin())
-		load_textdomain( $theme_domain, get_stylesheet_directory() ."/langs/local-" . WPLANG . ".mo" ); // admin msgid terms are also in local of child !
+		load_textdomain( $theme_domain, get_stylesheet_directory() ."/langs/local-" . get_option( 'WPLANG', 'en_US' ) . ".mo" ); // admin msgid terms are also in local of child !
 
 	load_theme_textdomain( $theme_domain, get_stylesheet_directory() . '/langs' ); // now use .mo of child
 
@@ -57,6 +58,8 @@ function parent_xilidev_setup () {
 			'theme_domain' => $theme_domain,
 			'child_version' => RESPONSIVE_XILI_VER
 		);
+		// new with xili-language 2.15+
+		add_theme_support ( 'custom_xili_flag' );
 
 		if ( is_admin() ) {
 
@@ -126,8 +129,7 @@ function parent_xilidev_setup () {
 		add_action( 'admin_notices', $c = create_function( '', 'echo "' . addcslashes( $msg, '"' ) . '";' ) );
 
 	// end errors...
-	// new with xili-language 2.15+
-	add_theme_support ( 'custom_xili_flag' );
+
 }
 
 /* actions and filters*/
